@@ -1,0 +1,12 @@
+mode run
+tmax 100.0
+dt 0.5
+options options_run.input
+ZhuNakamura 2
+datafile output_all.dat
+weightpath all_weights.pkl
+savedir ./restart
+QMout ./QM.out
+pathQMout ./
+stoppath ./
+numberofmolecules	4000
