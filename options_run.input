@@ -1,0 +1,61 @@
+superiorfolder_path /user/julia/bin/NN 
+controlfile control 
+NumberOfNNs 1
+improvement_threshold_energy 0.9999900
+improvement_threshold_soc 0.9999900
+improvement_threshold_dipole 0.9999900
+improvement_threshold_nac 0.9999900
+force_influence 1.000000
+quantities energy_grad dipole nac
+
+#Input for NN1
+
+NN1_seed 1234
+NN1_split 0.900
+NN1_epochs 30000
+NN1_batch 500
+
+NN1_decay_factor_energy 0.993725
+NN1_decay_steps_energy 3
+NN1_decay_factor_soc 1
+NN1_decay_steps_soc 170
+NN1_decay_factor_dipole 0.999930
+NN1_decay_steps_dipole 1
+NN1_decay_factor_nac 0.993477
+NN1_decay_steps_nac 64
+
+
+#Network architecture for energy
+NN1_size_energy 50 50 50 50 50 50
+NN1_act_energy n n n n n n l 
+NN1_L2_reg_energy 0.000000033157147
+NN1_learn_energy 0.005330027636268
+NN1_hypergradient_learningrate_energy 1e-05
+
+#Network architecture for soc
+NN1_size_soc 60 60
+NN1_act_soc t t l
+NN1_L2_reg_soc 0.000000000001291 
+NN1_learn_soc 0.001191742635567
+NN1_hypergradient_learningrate_soc 1e-05
+
+#Network architecture for dipole
+NN1_size_dipole 50 50 50 50 50 50
+NN1_act_dipole t t t t t t l 
+NN1_L2_reg_dipole 0.000000863089128
+NN1_learn_dipole 0.000006196052380
+NN1_hypergradient_learningrate_dipole 1e-05
+
+#Network architecture for nac
+NN1_size_nac 74 74 74 74 74 74
+NN1_act_nac t t t t t t l 
+NN1_L2_reg_nac 0.000000039865157
+NN1_learn_nac 0.000055377655826
+NN1_hypergradient_learningrate_nac 1e-05
+
+
+#Threshold for error between 2 NNs
+threshold_energy 1
+threshold_soc 1
+threshold_dipole 1
+threshold_nac 1
